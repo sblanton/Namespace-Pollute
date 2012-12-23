@@ -14,7 +14,12 @@ sub import {
 	}
 
 	foreach my $module (@_) {
-		eval "require $module";
+		eval { require $module };
+
+		if ($@) {
+			print "Warning: Module '$module' in module list not found\n";
+			next;
+		}
 
 		if ( eval { $module->isa('Exporter') } ) {
 			print "ISA Exporter: $module\n" if $VERBOSE;
