@@ -64,8 +64,12 @@ for modules that inherit from 'Exporter'.
 
 For modules that don't inherit from 'Exporter', those modules' 'import' method will be called.
 
+=head1 SEE ALSO
+
+MaSTer has Import::Into. He's right when he says writing an importer is a pain. I probably wouldn't have written this if I had known about that, but I'll see if I can provide a twist.
+
 =head1 TODO
 
-1) Make it work for Exporter's EXPORT_OK. 2) Export symbols to a variable number of levels.
+0) Make it pass test when run by CPAN - works for me. 1) Make it work for Exporter's EXPORT_OK. 2) Export symbols to a variable number of levels.
 
 =cut
